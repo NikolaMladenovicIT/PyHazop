@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!--I tried to find the font closest to the one you used 'Adobe Clean' -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>PyHAZOP</h1>
+<br> 
+<div class="process-wrapper"> 
+	<!-- Creating a progress bar / navigator -->
+<div id="progress-bar-container">
+	<ul >
+		<li class="step step01 active"><div class="step-inner">Info</div></li>
+		<li class="step step02"><div class="step-inner">Inititating  Causes</div></li>
+		<li class="step step03"><div class="step-inner">Consequenses</div></li>
+		<li class="step step04"><div class="step-inner">Results</div></li>
+		<li class="step step05"><div class="step-inner">Parking Lot</div></li>
+    </ul>
+	<!-- Creating a progress bar / navigator line -->
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+<!-- The main div that has all the most important performance and functionality -->
+<div class="container">
+<div id="progress-content-section">
+	<!-- An info section has been created that is the first active by diffolt -->
+	<div class="section-content info active">
+		<h3 class="head"><b>Inputs:</b></h3>
+		<!-- Div from bootstrap for clearer view -->
+		<div class="input-group mb-3">
+		<h3>Node ID<br>Node Description<br>Design Pressure<br>Design Temperature</h3>
+		</div>
+		<div class="input-group mb-3">
+			<button type="button" class="btn btn00">Discard</button>
+			<button type="button" class="btn btn01">Back</button>
+			<button type="button" class="btn btn02">Next</button>
+		</div>
+	</div>
+	<!-- Creating initiating causes section -->
+	<div class="section-content initiatingcauses">
+		<div class="container">
+		  <div class="input-group mb-3">
+			<div class="input-group mb-3">
+				<div class="input-group mb-3">
+				<h5><b>Build Cases Structure:</b></h5>
+            </div>
+				<select id="cases" name="cases">
+					<option value="">Select Case</option>
+				  </select>
+				</div>
+				<div class="input-group mb-3">
+				<div class="pressureline"><div class="pressurelinee"></div></div>
+				<hr class="new1">
+				<p class="PressureLabel"> Pressure</p>
+				<select name="deviation" id="deviation">
+					<option value="" disabled selected style="color:lightgrey; ">Select Deviation</option>
+					<option value="more">More</option>
+					<option value="less">Less</option>
+				  </select>
+			</div>
+			<div class="input-group mb-3">
+				<div class="pressureline1"><div class="pressurelinee1"></div></div>
+				<hr class="new2">
+				<p class="MoreLabel">More</p>
+				<select name="causes" id="causes" style="visibility: hidden;">
+					<option value="" disabled selected style="color:lightgrey;">Select Causes</option>
+					<option value="more">More</option>
+					<option value="less">Less</option>
+				  </select>
+			</div>
+			<div class="input-group mb-3">
+				<div class="pressureline2"></div>
+				<hr class="new3">
+				<p class="CauseLabel">Cause 01</p>
+			</div>
+			<div class="input-group mb-3">
+				<div class="pressureline3"></div>
+				<hr class="new4h">
+				<p class="CauseLabelh">Cause 01</p>
+			</div>
+			<div class="input-group mb-3">
+				<div class="pressureline4"><div class="pressurelinee4"></div></div>
+				<hr class="new4">
+				<p class="ValueLabel">Value 0.03</p>
+				<p class="RemarkLabel">Remark <input type="text" class="remarkinput" size="15" placeholder="Write something..."></p>
+			
+			<div class="input-group mb-3" style="border-bottom: solid; border-color: rgb(175, 175, 175); ">
+			<hr class="new5">
+			<img class="image1" src="images\download.png" alt="Trulli" width="350" height="300" style="margin-left: 312px; margin-top: -190px; border-style: solid; border-color: rgb(209, 207, 207);">
+
+		</div>
+			<button type="button" class="btn btn00" class="clearfix">Discard</button>
+			<button type="button" class="btn btn03" class="clearfix">Back</button>
+			<button type="button" class="btn btn04" class="clearfix">Next</button>
+		
+		</div>
+	</div>
+</div>
+    </div>
+    
+		<!-- Creating consequenses section -->
+	<div class="section-content consequenses">
+        <form>
+		<div class="consequenses" >
+			<button type="button" class="btnconsequenses"><b><b>Consequenses</b></b></button>
+			<button type="button" class="btnsafeguards"><b>Safeguards</b></button>
+		</div>
+		<div class="safeguars" style="width: 850px; height: 350px; background-color: white;">
+<div class="pm" style="visibility: hidden; float: left; margin-top: 30px; margin-left:30px;" >
+	<h7 style="margin-left:10px;"><b style=" margin-top:90px">Pressure / More</b></h7>
+</div>
+<br style="clear: both;">
+<div class="insert">
+	<div class="row">
+		<div class="col">
+			<br style="clear: both;">
+			<label for="consequensesselect" style="vertical-align: top; font-size: 10px; margin-left: 120px;">Select Consequenses &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0.03</label>
+			<br style="clear: both;">
+			<label style="margin-left: 50px; margin-right: 10px;" id="labelCase01"><b>Cause 01:</b></label><select name="consequensesselect" id="consequensesselect1" style="width: 280px; height: 30px;">
+				<option value="SmallRelease">Small Release (Flammable or Toxic)</option>
+				<option value="LargeRelease">Large Release (Flammable or Toxic)</option>
+			  </select>
+		</div>
+		<br style="clear: both;">
+		<div class="col">
+			<br style="clear: both;">
+			<label for="inputtext" class="labelinputtext" ><b>Remarks</b></label>
+			<br style="clear: both;">
+		  <input type="text" name="inputtext" id="remarks1" style="width:310px;">
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col">
+			<br style="clear: both;">
+			<label for="consequensesselect" style="vertical-align: top; font-size: 10px; margin-left: 120px;">Select Consequenses &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0.03</label>
+			<br style="clear: both;">
+			<label style="margin-left: 50px; margin-right: 10px;" id="labelCase02" ><b>Cause 02:</b></label><select name="consequensesselect" id="consequensesselect2" style="width: 280px; height: 30px;">
+				<option value="SmallRelease">Small Release (Flammable or Toxic)</option>
+				<option value="LargeRelease">Large Release (Flammable or Toxic)</option>
+			  </select>
+		</div>
+		<br style="clear: both;">
+		<div class="col">
+			<br style="clear: both;">
+			<label for="inputtext" class="labelinputtext" ><b>Remarks</b></label>
+			<br style="clear: both;">
+		  <input type="text" name="inputtext" id="remarks2" style="width:310px;">
+		</div>
+	  </div>
+      <hr class="hrsafe" style="margin: 40px; height: 3px; color: rgb(14, 13, 13);">
+      <div class="row">
+		<div class="col" style="margin-top: -50px;">
+			<br style="clear: both;">
+			<label for="consequensesselect" style="vertical-align: top; font-size: 10px; margin-left: 120px;">Select Consequenses &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+			<br style="clear: both;">
+			<label style="margin-left: 50px; margin-right: 10px;" id="labelCase03"><b>Cause 03:</b></label><select name="consequensesselect" id="consequensesselect3" style="width: 280px; height: 30px;">
+				<option value="SmallRelease">Small Release (Flammable or Toxic)</option>
+				<option value="LargeRelease">Large Release (Flammable or Toxic)</option>
+			  </select>
+		</div>
+		<br style="clear: both;">
+		<div class="col" style="margin-top: -50px;">
+			<br style="clear: both;">
+			<label for="inputtext" class="labelinputtext" ><b>Remarks</b></label>
+			<br style="clear: both;">
+		  <input type="text" name="inputtext" id="remarks3" style="width:310px;">
+		</div>
+	  </div>
+</div>
+        </div>
+        <div class="safeguars2">
+            <div style="margin-top: -30px;">
+             <button type="button" class="btnipl"><b><b>IPL</b></b></button>
+			<button type="button" class="btnmodifier"><b>Modifier</b></button>
+            </div> 
+            <div class="pmm">
+                <h7 style="margin-left:-550px;"><b style=" margin-top:10px">Pressure / More</b></h7>
+            <div >
+                <br style="clear: both;">
+                <label><b>Cause 01:</b></label>
+               <select style="width: 130px; height: 30px; margin-left: 5px;">
+                <option value="">IPL 1</option>
+               </select>
+               <select style="width: 120px; height: 30px;">
+                <option value="">IPL 2</option>
+               </select>
+               <select style="width: 110px; height: 30px;">
+                <option value="">IPL 3</option>
+               </select>
+               <select style="width: 100px; height: 30px;">
+                <option value="">IPL 4</option>
+               </select>
+               <input type="text" name="inputtext" style="width:170px; margin-left: 10px;">
+               <br style="clear: both;">
+               <br style="clear: both;">
+
+               <label><b>Cause 01:</b></label>
+              <select style="width: 130px; height: 30px; margin-left: 5px;">
+               <option value="">IPL 1</option>
+              </select>
+              <select style="width: 120px; height: 30px;">
+               <option value="">IPL 2</option>
+              </select>
+              <select style="width: 110px; height: 30px;">
+               <option value="">IPL 3</option>
+              </select>
+              <select style="width: 100px; height: 30px;">
+               <option value="">IPL 4</option>
+              </select>
+              <input type="text" name="inputtext" style="width:170px; margin-left: 10px;">
+              </div>
+            </div>
+        </div>
+        <div class="safeguars22">
+            <div class="pmmm" style="float: left; margin-top: -160px; margin-left:230px;" >
+             <h7 style="margin-left:-550px;"><b style=" margin-top:10px">Pressure / More</b></h7>
+            <div >
+                <br style="clear: both;">
+                <label style="margin-left: -120px;"><b>Cause 01:</b></label>
+               <select style="width: 330px; height: 30px; margin-left: 5px;">
+                <option value="">IPL 1</option>
+               <input type="text" name="inputtext" style="width:170px; margin-left: 10px;">
+              </div>
+              <div >
+                <br style="clear: both;">
+                <label style="margin-left: -120px;"><b>Cause 01:</b></label>
+               <select style="width: 330px; height: 30px; margin-left: 5px;">
+                <option value="">IPL 1</option>
+               <input type="text" name="inputtext" style="width:170px; margin-left: 10px;">
+              </div>
+            </div>
+        </div>
+        <br style="clear: both;">
+               <br style="clear: both;">
+		    <button type="button" class="btn btn00" class="clearfix">Discard</button>
+			<button type="button" class="btn btn05" class="clearfix">Back</button>
+			<button type="button" class="btn btn06" class="clearfix" id="btn06">Next</button>
+        </form>
+	</div>
+		<!-- Creating results section -->
+	<div class="section-content results">
+		<h2>Results</h2>
+        <canvas id="myChart" width="300px" height="100px"></canvas>
+        <button type="button" class="btn btn00" class="clearfix">Discard</button>
+        <button type="button" class="btn btn07" class="clearfix">Back</button>
+        <button type="button" class="btn btn08" class="clearfix">Next</button>
+	</div>
+		<!-- Creating parking lot section -->
+	<div class="section-content parkinglot">
+        <!-- Creating tabs -->
+        <div class="tabs">
+            <div class="tab-header">
+              <div class="active">
+                <i></i> Human
+              </div>
+              <div>
+                <i ></i> Enviorment
+              </div>
+              <div>
+                <i></i> Assets
+              </div>
+              <div>
+                <i></i> Parking Lot
+              </div>
+            </div>
+             <!-- Creating tabs body with all context -->
+            <div class="tab-body">
+              <div class="active">
+                <h2>This is human section</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error neque saepe commodi blanditiis fugiat nisi aliquam ratione porro quibusdam in, eveniet accusantium cumque. Dolore officia reprehenderit perferendis quod libero omnis.</p>
+              <input type="text" id="human">
+            </div>
+              <div>
+                <h2>This is enviorment section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+              </div>
+              <div>
+                <h2>This is assets section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+              </div>
+              <div>
+                <h2>This is contact section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+              </div>
+            </div>
+          </div>
+		</div>
+	
+</div>
+<!-- Importing Chart libraries from CDN to create charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<!-- Importing Ajax libraries from CDN to manipulate with the necessary and available functions -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="jquery-2.1.4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+GetIt();
+ const xlabels=[];
+ const ytemps=[];
+// Creating Chart using chart.js with inserted data
+async function GetIt(){
+    await GetData();
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: xlabels,
+        datasets: [{
+            label: 'Safeguards',
+            data: ytemps,
+            backgroundColor: 
+                'rgba(127, 211, 197)',
+            
+            borderColor: 
+                'rgba(196, 195, 195)',
+            
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
+
+async function GetData(){
+const response=await fetch('data.csv');
+const data=await response.text();
+const rows=data.split('\n').slice(1);
+rows.forEach(elt=>{
+    const row=elt.split(',');
+    const name=row[0];
+    xlabels.push(name);
+    const value=row[1];
+    ytemps.push(value);
+    console.log(name,value);
+})
+ }
+ 
+ fetch('data.csv')
+// Reading data from JSON file and importing in cases dropdown / select 
+$(document).ready(function(){
+
+// Loading data from .json file to cases select 
+load_json_data('cases');
+
+// Function for loading data from json file into select control and 
+//populating other select controles based on seected value from the first one
+function load_json_data(id, parent_id)
+{
+ var html_code = '';
+ $.getJSON('data.json', function(data){
+
+  html_code += '<option value="">Select '+id+'</option>';
+  $.each(data, function(key, value){
+   if(id == 'cases')
+   {
+    if(value.parent_id == '0')
+    {
+     html_code += '<option value="'+value.id+'">'+value.Description+'</option>';
+    }
+   }
+   else
+   {
+    if(value.parent_id == parent_id)
+    {
+     html_code += '<option value="'+value.id+'">'+value.Description+'</option>';
+    }
+   }
+  });
+  $('#'+id).html(html_code);
+ });
+
+}
+});
+//Creating function click for every step class
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+$(".btn").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+//When click on first step on progress bar make current active
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+    $(".info").addClass("active").siblings().removeClass("active");
+    $(".step2a").css("visibility", "hidden");
+    $(".step3a").css("visibility", "hidden");
+    $(".step4a").css("visibility", "hidden");
+});
+$(".btn00").click( function(as) {
+	$("#line-progress").css("width", "0%");
+    $(".info").addClass("active").siblings().removeClass("active");
+    $(".step2a").css("visibility", "hidden");
+    $(".step3a").css("visibility", "hidden");
+    $(".step4a").css("visibility", "hidden");
+    $(".step5a").css("visibility", "hidden");
+    $(".step").removeClass("active");
+    $(".step01").addClass("active");
+});
+$(".btn01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".info").addClass("active").siblings().removeClass("active");
+});
+
+//When click on second step on progress bar make current active
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".initiatingcauses").addClass("active").siblings().removeClass("active");
+});
+
+$(".btn02").click( function(as) {
+	$("#line-progress").css("width", "25%");
+    $(".initiatingcauses").addClass("active").siblings().removeClass("active");
+    $(".step02").addClass("active");
+});
+
+$(".btn03").click( function(as) {
+	$("#line-progress").css("width", "3%");
+    $(".info").addClass("active").siblings().removeClass("active");
+    $(".step02").removeClass("active");
+    $(".step03").removeClass("active");
+    $(".step04").removeClass("active");
+    $(".step05").removeClass("active");
+});
+
+$(".btn04").click( function(as) {
+	$("#line-progress").css("width", "50%");
+    $(".consequenses").addClass("active").siblings().removeClass("active");
+    $(".btnconsequenses").css("color", "black");
+    $(".step03").addClass("active");
+});
+
+$(".btn05").click( function(as) {
+	$("#line-progress").css("width", "25%");
+    $(".initiatingcauses").addClass("active").siblings().removeClass("active");
+    $(".step3a").css("visibility", "hidden");
+    $(".step03").removeClass("active");
+    $(".step04").removeClass("active");
+    $(".step05").removeClass("active");
+});
+
+$(".btn06").click( function(as) {
+	$("#line-progress").css("width", "75%");
+    $(".results").addClass("active").siblings().removeClass("active");
+    $(".step04").addClass("active");
+});
+$(".btn08").click( function(as) {
+	$("#line-progress").css("width", "100%");
+    $(".results").addClass("active").siblings().removeClass("active");
+    $(".step05").addClass("active");
+    
+});
+$(".btn07").click( function(as) {
+    $("#line-progress").css("width", "50%");
+    $(".consequenses").addClass("active").siblings().removeClass("active");
+    $(".step04").removeClass("active");
+    $(".step05").removeClass("active");
+    
+});
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".consequenses").addClass("active").siblings().removeClass("active");
+	
+});
+
+$(".btnsafeguards").click( function() {
+    $(".consequenses").css("background-color","white");
+    $(".col").css("visibility", "hidden");
+    $(".safeguars2").css("visibility", "visible");
+    $(".hrsafe").css("visibility", "hidden");
+    $(".pmm").css("visibility", "visible");
+    $(".btnsafeguards").css("color", "black");
+    $(".btnconsequenses").css("color", "#eee");
+    $(".safeguars").css("height", "250px");
+    $(".safeguars22").css("visibility", "hidden");
+    $(".btnmodifier").css("visibility", "visible");
+    $(".btnipl").css("visibility", "visible");
+    $(".btnipl").css("color", "black");
+
+});
+
+$(".btnconsequenses").click( function() {
+    $(".consequenses").css("background-color","#eee");
+    $(".col").css("visibility", "visible");
+    $(".hrsafe").css("visibility", "visible");
+    $(".safeguars").css("visibility", "visible");
+    $(".safeguars2").css("visibility", "hidden");
+    $(".pmm").css("visibility", "hidden");
+    $(".btnconsequenses").css("color", "black");
+    $(".btnsafeguards").css("color", "#eee");
+    $(".safeguars").css("height", "350px");
+    $(".btnmodifier").css("visibility", "hidden");
+    $(".btnipl").css("visibility", "hidden");
+    $(".safeguars22").css("visibility", "hidden");
+
+});
+
+$(".btnipl").click( function() {
+    $(".safeguars2").css("visibility", "visible");
+    $(".pmm").css("visibility", "visible");
+    $(".safeguars22").css("visibility", "hidden");
+    $(".btnmodifier").css("visibility", "visible");
+    $(".btnipl").css("visibility", "visible");
+    $(".btnipl").css("color", "black");
+    $(".btnmodifier").css("color", "#eee");
+});
+
+$(".btnmodifier").click( function() {
+    $(".safeguars2").css("visibility", "hidden");
+    $(".pmm").css("visibility", "hidden");
+    $(".btnipl").css("visibility", "visible");
+    $(".btnmodifier").css("visibility", "visible");
+    $(".btnmodifier").css("color", "black");
+    $(".btnipl").css("color", "#eee");
+    $(".safeguars22").css("visibility", "visible");
+    $(".safeguars22").css("width", "750px");
+    $(".safeguars22").css("margin-left", "50px");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".results").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".parkinglot").addClass("active").siblings().removeClass("active");
+});
+
+$("#cases").on('change', function(){	
+	$(".pressureline").css("visibility", "visible");
+	$(".new1").css("visibility", "visible");
+	$(".PressureLabel").css("visibility", "visible");
+	$("#deviation").css("visibility", "visible");
+});
+
+$("#deviation").on('change', function(){
+	alert("deviation");
+	$(".pressureline1").css("visibility", "visible");
+	$(".new2").css("visibility", "visible");
+	$(".MoreLabel").css("visibility", "visible");
+	$("#causes").css("visibility", "visible");
+});
+
+$("#causes").on('change', function(){
+	alert("causes");
+	$(".pressureline2").css("visibility", "visible");
+	$(".pressureline4").css("visibility", "visible");
+	$(".new3").css("visibility", "visible");
+	$(".new4").css("visibility", "visible");
+	$(".new2").css("visibility", "visible");
+	$(".MoreLabel").css("visibility", "visible");
+	$(".CauseLabel").css("visibility", "visible");
+	$(".ValueLabel").css("visibility", "visible");
+	$(".RemarkLabel").css("visibility", "visible");
+});
+
+//Js code for tabs
+let tabHeader = document.getElementsByClassName("tab-header")[0];
+let tabBody = document.getElementsByClassName("tab-body")[0];
+
+let tabsPane = tabHeader.getElementsByTagName("div");
+
+for(let i=0;i<tabsPane.length;i++){
+  tabsPane[i].addEventListener("click",function(){
+    tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+    tabsPane[i].classList.add("active");
+    tabBody.getElementsByClassName("active")[0].classList.remove("active");
+    tabBody.getElementsByTagName("div")[i].classList.add("active");
+      });
+}
+let remarks = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addRemark = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let remark1 = {
+                Case_no: document.getElementById('labelCase01').textContent,
+                Remark: document.getElementById('remarks1').value,
+                Consequenses: document.getElementById('consequensesselect1').value
+            }
+            let remark2 = {
+                Case_no: document.getElementById('labelCase02').textContent,
+                Remark: document.getElementById('remarks2').value,
+                Consequenses: document.getElementById('consequensesselect1').value
+            }
+            let remark3 = {
+                Case_no: document.getElementById('labelCase03').textContent,
+                Remark: document.getElementById('remarks3').value,
+                
+            }
+            remarks.push(remark1);
+            remarks.push(remark2);
+            remarks.push(remark3);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {remarks} );
+            let pre = document.querySelector('#msg pre');
+            //saving to localStorage
+            localStorage.setItem('MyRemarks', JSON.stringify(remarks) );   
+            var arr = JSON.parse(localStorage.getItem('MyRemarks'));
+            arr.forEach(function(obj) {
+                console.log(obj.Case_no);
+                console.log(obj.Remark);
+                console.log(obj.Consequenses);
+  });
+            }
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn06').addEventListener('click', addRemark);
+            
+        });
+        
+    </script>
+</body>
+</html>

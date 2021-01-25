@@ -1,0 +1,5 @@
+Initiating Causes,Value
+BPCS Failure,0.5
+SIS Failure,0.33
+Exchanger Failure,0.1
+Pump Spurious Trip,0.3
